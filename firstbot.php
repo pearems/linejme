@@ -28,13 +28,15 @@
 	if (!is_null($events['events'])) //check ค่าในตัวแปร $events
 	{
 		foreach ($events['events'] as $event) {
-			if ($event['type'] == 'message' && $event['message']['type'] == 'text')
+			// if ($event['type'] == 'message' && $event['message']['type'] == 'text')
+			if ($event['type'] == 'message')
 			{
 				$replyToken = $event['replyToken']; //เก็บ reply token เอาไว้ตอบกลับ
 				$source_type = $event['source']['type'];//เก็บที่มาของ event(user หรือ group)
 				$txtin = $event['message']['text'];//เอาข้อความจากไลน์ใส่ตัวแปร $txtin
 				$txtreply = "Hello";
-				reply_msg($txtreply,$replyToken);      
+				// reply_msg($txtreply,$replyToken);      
+				reply_msg($content,$replyToken); 
 			}
 		}
 	}

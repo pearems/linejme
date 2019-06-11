@@ -2,7 +2,7 @@
 	function reply_msg($txtin,$replyToken)//สร้างข้อความและตอบกลับ
 	{
 		$access_token = 'Epi7WPKimiITDNoBCg1mzatrl5Df9Yov5TR+NU+PwX3okCA9xd+088TGzRtpsGaBS/aZTv+AfDjDtMM1HDnIl5i989CheVa+NgnyrCGY3SCaBqx7Bvzb2LtLVuRaGU8rNwd7gslU9Q8dS7UHw78EJgdB04t89/1O/w1cDnyilFU=';
-		
+
 		$messages = ['type' => 'text','text' => $txtin];//สร้างตัวแปร 
 		$url = 'https://api.line.me/v2/bot/message/reply';
 		$data = [
@@ -33,7 +33,8 @@
 				$replyToken = $event['replyToken']; //เก็บ reply token เอาไว้ตอบกลับ
 				$source_type = $event['source']['type'];//เก็บที่มาของ event(user หรือ group)
 				$txtin = $event['message']['text'];//เอาข้อความจากไลน์ใส่ตัวแปร $txtin
-				reply_msg($content,$replyToken);      
+				$txtreply = "Hello";
+				reply_msg($txtreply,$replyToken);      
 			}
 		}
 	}
